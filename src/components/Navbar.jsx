@@ -42,11 +42,11 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isTransparent
-      ? 'bg-transparent text-white border-transparent py-6'
-      : 'bg-white/70 backdrop-blur-2xl border-b border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] text-neutral-900 py-3'
+      ? 'bg-transparent text-white border-transparent py-4'
+      : 'bg-white/70 backdrop-blur-2xl border-b border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] text-neutral-900 py-2'
       }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Left: Brand */}
           <Link
             to="/"
@@ -98,7 +98,7 @@ export default function Navbar() {
             <Link
               to="/contact"
               onClick={handleNavClick}
-              className={`px-8 py-3 ${isTransparent ? 'bg-white text-black hover:bg-neutral-200' : 'bg-neutral-900 text-white hover:bg-neutral-800'} rounded-full font-black text-sm uppercase tracking-widest transition-all shadow-lg active:scale-95`}
+              className={`hidden md:block px-8 py-3 ${isTransparent ? 'bg-white text-black hover:bg-neutral-200' : 'bg-neutral-900 text-white hover:bg-neutral-800'} rounded-full font-black text-sm uppercase tracking-widest transition-all shadow-lg active:scale-95`}
             >
               Let's Talk
             </Link>

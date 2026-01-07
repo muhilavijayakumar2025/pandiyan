@@ -45,7 +45,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6">
                 Empowering Businesses <br />
                 with <span className="text-[#f39c12]">Technology</span>
               </h1>
@@ -76,108 +76,23 @@ export default function Hero() {
               className="relative"
             >
               {/* Main Decorative Image Placeholder/Container */}
-              <div className="relative z-10 w-[500px] h-[500px] mx-auto flex items-center justify-center">
-                {/* Simulated Smartphone Hand Visualization */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-40">
-                  <svg viewBox="0 0 200 200" className="w-full h-full text-blue-400">
-                    <path fill="currentColor" d="M40,20 L160,20 Q170,20 170,30 L170,170 Q170,180 160,180 L40,180 Q30,180 30,170 L30,30 Q30,20 40,20 Z" className="opacity-10" />
-                    <path fill="currentColor" d="M50,30 L150,30 L150,160 L50,160 Z" className="opacity-20" />
-                  </svg>
-                </div>
-
-                {/* Floating Software Icons */}
-                {[
-                  {
-                    icon: (
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    ),
-                    x: '-40%', y: '-25%', delay: 0
-                  },
-                  {
-                    icon: (
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    ),
-                    x: '45%', y: '-35%', delay: 0.5
-                  },
-                  {
-                    icon: (
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                      </svg>
-                    ),
-                    x: '35%', y: '25%', delay: 1
-                  },
-                  {
-                    icon: (
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                      </svg>
-                    ),
-                    x: '-35%', y: '35%', delay: 1.5
-                  },
-                  {
-                    icon: (
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                      </svg>
-                    ),
-                    x: '0%', y: '-45%', delay: 2
-                  }
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{
-                      y: [0, -25, 0],
-                      x: [0, i % 2 === 0 ? 5 : -5, 0],
-                      rotate: [0, 5, 0]
-                    }}
-                    transition={{
-                      duration: 5 + i,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: item.delay
-                    }}
-                    className="absolute bg-white/10 backdrop-blur-xl w-20 h-20 rounded-3xl flex items-center justify-center text-yellow-400 border border-white/20 shadow-2xl"
-                    style={{ left: `calc(50% + ${item.x})`, top: `calc(50% + ${item.y})` }}
-                  >
-                    {item.icon}
-                  </motion.div>
-                ))}
-
-                {/* Enhanced Nodes and Lines Effect */}
-                <div className="absolute inset-0 z-0">
-                  <svg className="w-full h-full opacity-40" viewBox="0 0 100 100">
-                    <defs>
-                      <filter id="glow">
-                        <feGaussianBlur stdDeviation="0.5" result="coloredBlur" />
-                        <feMerge>
-                          <feMergeNode in="coloredBlur" />
-                          <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                      </filter>
-                    </defs>
-                    {[
-                      { x: 20, y: 30 }, { x: 80, y: 40 }, { x: 50, y: 70 },
-                      { x: 30, y: 80 }, { x: 70, y: 20 }, { x: 10, y: 60 },
-                      { x: 90, y: 70 }, { x: 40, y: 15 }
-                    ].map((p, i, arr) => (
-                      <g key={i}>
-                        <circle cx={p.x} cy={p.y} r="0.8" fill="#f39c12" filter="url(#glow)" />
-                        {arr.slice(i + 1).map((p2, j) => {
-                          const dist = Math.sqrt(Math.pow(p.x - p2.x, 2) + Math.pow(p.y - p2.y, 2));
-                          if (dist < 40) {
-                            return <line key={j} x1={p.x} y1={p.y} x2={p2.x} y2={p2.y} stroke="#f39c12" strokeWidth="0.1" opacity={1 - dist / 40} />;
-                          }
-                          return null;
-                        })}
-                      </g>
-                    ))}
-                  </svg>
-                </div>
+              {/* Main Decorative Image */}
+              <div className="relative z-10 w-full max-w-[600px] mx-auto flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-purple-600/30 blur-[60px] rounded-full -z-10" />
+                <motion.img
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, 1, 0, -1, 0]
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  src="/hero-tech.png"
+                  alt="Future Technology"
+                  className="w-full h-auto rounded-2xl shadow-2xl border border-white/10"
+                />
               </div>
             </motion.div>
           </div>

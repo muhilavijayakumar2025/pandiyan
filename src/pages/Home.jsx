@@ -1,7 +1,7 @@
 import Hero from '../components/Hero.jsx'
 import PageLinkCards from '../components/PageLinkCards.jsx'
 import ServicesShort from '../components/ServicesShort.jsx'
-import Testimonials from '../components/Testimonials.jsx'
+import FeaturedProjects from '../components/FeaturedProjects.jsx'
 import FAQ from '../components/FAQ.jsx'
 import HomeCTA from '../components/HomeCTA.jsx'
 
@@ -11,9 +11,9 @@ export default function Home() {
             <Hero />
             <PageLinkCards />
             <ServicesShort />
-            <Testimonials />
+            <FeaturedProjects />
             <FAQ />
             <HomeCTA />
         </>
-    )
+    ) 
 }
